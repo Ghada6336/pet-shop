@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -12,7 +14,13 @@
           {% if pet.available == True %}
               <h1><a href="{% url 'pet-detail' pet.id %}">{{ pet.name }}</a></h1>
               
+              <!--<img src="{% static 'example.jpg' %} >-->
               <br>
+              {% if pet.image %}
+                <img src="{{pet.image.url}}" alt="pets shop">
+              <br>
+              {% endif %}
+
 
           {% endif %}
         {% endfor %}

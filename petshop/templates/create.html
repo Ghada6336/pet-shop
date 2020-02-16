@@ -5,10 +5,14 @@
     <title>create</title>
   </head>
   <body>
-    <form action="{% url 'pet-create' %}" method="POST">
+    <form action="{% url 'pet-create' %}" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_p }}
       <input type="submit"/>
+      <!--{% if pet.image %}
+        <img src="{{pet.image.url}}" alt="Hey noob!">
+      <br>
+      {% endif %}-->
     </form>
     <a href="{% url 'pet-list' %}">
       <button type="button">
@@ -16,6 +20,6 @@
       </button>
     </a>
     <br>
-    <!--<img src="{{petshop.image.url}}" alt="Hey noob!">-->
+
   </body>
 </html>

@@ -5,7 +5,7 @@ class Petshop(models.Model):
     age = models.IntegerField()
     available=models.BooleanField(default=True)
 
-    #image=models.ImagesField()
+    image=models.ImageField(null=True, blank=True)
     price =models.DecimalField(max_digits=2, decimal_places=0)
 
     def __str__(self):

@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>{{ petshop.name }}</h1>
-        <h3>Author: {{ petshop.age }}</h3>
-        <p>{{ petshop.available }}</p>
-        <p>{{ petshop.price }}</p>
+        <h3>Pet age: {{ petshop.age }}</h3>
+        <p> Pet avaliabilty:{{ petshop.available }}</p>
+        <p>Pet price:  {{ petshop.price }}</p>
         <a href="{% url 'pet-update' petshop.id %}">
           <button type="button" name="button">
             Update

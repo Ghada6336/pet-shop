@@ -6,11 +6,10 @@ def welcome(request):
     return render(request, 'home.html', {'msg':'Hello World!'})
 
 def Petshop_list(request):
-    #list = PetShop.objects.all()
-    #list = [x for x in list if x.available]
+
     context = {
-        #"petshop":list,
-        "petshop":Petshop.objects.all()
+
+        "petshop": Petshop.objects.all()
     }
     return render(request, 'list.html', context)
 
@@ -24,7 +23,7 @@ def Petshop_detail(request, pet_id):
 def Petshop_create(request):
     form = PetshopForm()
     if request.method == "POST":
-        form = PetshopForm(request.POST)
+        form = PetshopForm(request.POST , request.FILES)
         if form.is_valid():
             form.save()
             return redirect('pet-list')
