@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> List</title>
+    </head>
+    <body>
+
+        <a href="{% url 'pet-create' %}">Write!</a>
+        {% for pet in petshop %}
+
+          {% if pet.available == True %}
+              <h1><a href="{% url 'pet-detail' pet.id %}">{{ pet.name }}</a></h1>
+              
+              <br>
+
+          {% endif %}
+        {% endfor %}
+    </body>
+</html>

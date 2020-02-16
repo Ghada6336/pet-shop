@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update</title>
+  </head>
+  <body>
+    <form action="{% url 'pet-update' obj.id %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" />
+    </form>
+    <a href="{% url 'pet-list' %}">
+      <button type="button">
+        Cancel
+      </button>
+    </a>
+  </body>
+</html>
